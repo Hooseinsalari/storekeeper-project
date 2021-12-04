@@ -1,4 +1,35 @@
 .container {
-    margin: auto;
-    margin-top: 10px;
+   background-color: aquamarine; 
+   width: 30rem;
+   border-radius: 10px;
+}
+
+.inputContainer {
+
+    position: relative;
+}
+
+.input {
+    width: 15rem;
+    height: 20px;
+    margin: 30px 0;
+}
+
+.label {
+    position: absolute;
+    /* bottom: 20px; */
+    top: 8px;
+}
+
+.select {
+    height: 30px;
+    width: 15.5rem;
+}
+
+.button {
+    margin: 30px 0;
+    font-size: 17px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-weight: bold;
 }

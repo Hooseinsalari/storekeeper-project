@@ -24,25 +24,25 @@ const AddProductComponent = () => {
 
   return (
     <form onSubmit={submitHandler} className={styles.container}>
-      <div>
-        <label>نام محصول</label>
-        <input type="text" name="name" onChange={changeHandler} />
+      <div className={styles.inputContainer}>
+        <label className={styles.label}>نام محصول</label>
+        <input className={styles.input} type="text" name="name" onChange={changeHandler} />
       </div>
-      <div>
-        <label>دسته بندی</label>
-        <select onChange={changeHandler} name="category">
+      <div className={styles.inputContainer}>
+        <label className={styles.label}>دسته بندی</label>
+        <select onChange={changeHandler} name="category" className={`${styles.input} ${styles.select}`}>
           <option value="">-- select --</option>
           <option value="dairy">dairy</option>
           <option value="nuts">Nuts</option>
           <option value="junkFood">Junk Food</option>
         </select>
       </div>
-      <div>
-        <label>تعداد</label>
-        <input type="number" name="quantity" onChange={changeHandler} />
+      <div className={styles.inputContainer}>
+        <label className={styles.label}>تعداد</label>
+        <input className={styles.input} type="number" name="quantity" onChange={changeHandler} />
       </div>
       <div>
-        <button type="submit">اضافه کردن محصول</button>
+        <button className={styles.button} type="submit">اضافه کردن محصول</button>
       </div>
     </form>
   );

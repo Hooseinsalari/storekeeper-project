@@ -7,9 +7,13 @@ import {Route, Switch} from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route path="/addProduct" component={AddProductComponent} />
-      </Switch>
+      <Navbar />
+      <div className="form">
+        <Switch>
+          <Route path="/addProduct" component={AddProductComponent} />
+
+        </Switch>
+      </div>
     </div>
   );
 }
