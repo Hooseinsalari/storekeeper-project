@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+import axios from "axios";
+
+import styles from "./AddProductComponent.module.css"
+
 const AddProductComponent = () => {
   const [data, setData] = useState([])
   const [product, setProduct] = useState({
@@ -15,10 +19,11 @@ const AddProductComponent = () => {
   const submitHandler = (event) => {
     event.preventDefault()
     setData([...data, product])
+    axios.post("http://localhost:3001/product", product)
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.container}>
       <div>
         <label>نام محصول</label>
         <input type="text" name="name" onChange={changeHandler} />

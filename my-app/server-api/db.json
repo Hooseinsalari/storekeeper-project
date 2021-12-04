@@ -1,10 +1,10 @@
 {
   "product": [
     {
-      "name": "milk",
+      "name": "غذا",
       "category": "dairy",
-      "quantity": "5"
-    
+      "quantity": "20",
+      "id": 1
     }
   ]
 }
