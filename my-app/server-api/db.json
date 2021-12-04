@@ -1,0 +1,10 @@
+{
+  "product": [
+    {
+      "name": "milk",
+      "category": "dairy",
+      "quantity": "5"
+    
+    }
+  ]
+}
