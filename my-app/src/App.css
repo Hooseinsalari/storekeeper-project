@@ -9,3 +9,8 @@
   margin: auto;
   margin-top: 80px;
 }
+
+.navbar {
+  position: fixed;
+  top: 0px;
+}

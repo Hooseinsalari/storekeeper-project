@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import axios from "axios";
 
 import styles from "./AddProductComponent.module.css"
 
-const AddProductComponent = () => {
-  const [data, setData] = useState([])
+const AddProductComponent = ({data, setData}) => {
   const [product, setProduct] = useState({
     name: "",
     category: "",
@@ -20,30 +19,32 @@ const AddProductComponent = () => {
     event.preventDefault()
     setData([...data, product])
     axios.post("http://localhost:3001/product", product)
+    setProduct({ name:"", category: "", quantity: 0})
   }
 
   return (
     <form onSubmit={submitHandler} className={styles.container}>
       <div className={styles.inputContainer}>
         <label className={styles.label}>نام محصول</label>
-        <input className={styles.input} type="text" name="name" onChange={changeHandler} />
+        <input className={styles.input} type="text" name="name" value={product.name} onChange={changeHandler} />
       </div>
       <div className={styles.inputContainer}>
         <label className={styles.label}>دسته بندی</label>
         <select onChange={changeHandler} name="category" className={`${styles.input} ${styles.select}`}>
-          <option value="">-- select --</option>
-          <option value="dairy">dairy</option>
-          <option value="nuts">Nuts</option>
-          <option value="junkFood">Junk Food</option>
+          <option value="">-- انتخاب --</option>
+          <option value="dairy">لبنیات</option>
+          <option value="nuts">خشکبار</option>
+          <option value="junkFood">تنقلات</option>
         </select>
       </div>
       <div className={styles.inputContainer}>
         <label className={styles.label}>تعداد</label>
-        <input className={styles.input} type="number" name="quantity" onChange={changeHandler} />
+        <input className={styles.input} type="number" name="quantity" value={product.quantity} onChange={changeHandler} />
       </div>
       <div>
         <button className={styles.button} type="submit">اضافه کردن محصول</button>
       </div>
+      {console.log(data)}
     </form>
   );
 };

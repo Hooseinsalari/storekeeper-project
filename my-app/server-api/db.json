@@ -1,10 +1,41 @@
 {
   "product": [
     {
-      "name": "غذا",
+      "name": "شیر",
       "category": "dairy",
-      "quantity": "20",
+      "quantity": "30",
       "id": 1
+    },
+    {
+      "name": "ماست",
+      "category": "dairy",
+      "quantity": "30",
+      "id": 2
+    },
+    {
+      "name": "اجیل",
+      "category": "junkFood",
+      "quantity": "30",
+      "id": 3
+    },
+    {
+      "name": "تست",
+      "category": "junkFood",
+      "quantity": "30",
+      "id": 4
+    },
+    {
+      "name": "دوغ",
+      "category": "dairy",
+      "quantity": "30",
+      "id": 5
+    },
+    {
+      "name": "پفک",
+      "category": "nuts",
+      "quantity": "90",
+      "id": 6
     }
+    
   ]
 }
