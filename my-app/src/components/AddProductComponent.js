@@ -19,6 +19,8 @@ const AddProductComponent = ({data, setData}) => {
     event.preventDefault()
     setData([...data, product])
     axios.post("http://localhost:3001/product", product)
+     .then((response) => console.log(response.data))
+     .catch((error) => console.log(error))
     setProduct({ name:"", category: "", quantity: 0})
   }
 
@@ -44,7 +46,6 @@ const AddProductComponent = ({data, setData}) => {
       <div>
         <button className={styles.button} type="submit">اضافه کردن محصول</button>
       </div>
-      {console.log(data)}
     </form>
   );
 };

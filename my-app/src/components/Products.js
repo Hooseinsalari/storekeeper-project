@@ -11,6 +11,14 @@ const Products = ({data, setData}) => {
     //     fetch()
     // }, [data])
 
+    const getProduct = () => {
+        axios.get("http://localhost:3001/product")
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error))
+    }
+
+    getProduct()
+
     return (
         <div>
             {

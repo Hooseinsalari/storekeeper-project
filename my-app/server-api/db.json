@@ -35,7 +35,30 @@
       "category": "nuts",
       "quantity": "90",
       "id": 6
+    },
+    {
+      "name": "",
+      "category": "",
+      "quantity": 0,
+      "id": 7
+    },
+    {
+      "name": "asdasd",
+      "category": "dairy",
+      "quantity": "30",
+      "id": 8
+    },
+    {
+      "name": "asdasd",
+      "category": "",
+      "quantity": 0,
+      "id": 9
+    },
+    {
+      "name": "test22",
+      "category": "dairy",
+      "quantity": "30",
+      "id": 10
     }
-    
   ]
 }
