@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 
+import styles from "./Products.module.css";
+
 const Products = ({data, setData}) => {
 
     // useEffect(() => {
@@ -11,22 +13,22 @@ const Products = ({data, setData}) => {
     //     fetch()
     // }, [data])
 
-    const getProduct = () => {
-        axios.get("http://localhost:3001/product")
-            .then((response) => console.log(response.data))
-            .catch((error) => console.log(error))
-    }
+    // const getProduct = () => {
+    //     axios.get("http://localhost:3001/product")
+    //         .then((response) => console.log(response.data))
+    //         .catch((error) => console.log(error))
+    // }
 
-    getProduct()
+    // getProduct()
 
     return (
-        <div>
+        <div className={styles.container}>
             {
                 data.map((product) => (
-                <div>
-                    <p>{product.name}</p>
-                    <p>{product.category}</p>
-                    <p>{product.quantity}</p>
+                <div key={product.id} className={styles.product}>
+                    <p className={styles.proName}>{product.name}</p>
+                    <p className={styles.proCategory}>{product.category}</p>
+                    <p className={styles.proQuantity}>{product.quantity}</p>
                 </div>
                     ))
             }

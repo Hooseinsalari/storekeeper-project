@@ -17,12 +17,20 @@ const AddProductComponent = ({data, setData}) => {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    setData([...data, product])
+    // setData([...data, product])
     axios.post("http://localhost:3001/product", product)
-     .then((response) => console.log(response.data))
-     .catch((error) => console.log(error))
+    //  .then((response) => console.log(response.data))
+    //  .catch((error) => console.log(error))
     setProduct({ name:"", category: "", quantity: 0})
   }
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const {data} = await axios.get("http://localhost:3001/product")
+      setData(data)
+    }
+    fetchApi()
+  },[product])
 
   return (
     <form onSubmit={submitHandler} className={styles.container}>
