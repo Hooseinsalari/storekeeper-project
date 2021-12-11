@@ -3,12 +3,18 @@ import AddProductComponent from './components/AddProductComponent';
 import Navbar from './components/Navbar';
 
 import {Route, Switch} from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Products from './components/Products';
+import axios from 'axios';
 
 function App() {
 
   const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/product")
+     .then((response) => setData(response.data))
+  }, [])
 
   return (
     <div className="App">

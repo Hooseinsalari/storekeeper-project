@@ -3,23 +3,7 @@ import React, { useEffect } from 'react';
 
 import styles from "./Products.module.css";
 
-const Products = ({data, setData}) => {
-
-    // useEffect(() => {
-    //     const fetch = async () => {
-    //         const {data} = await axios.get("http://localhost:3001/product")
-    //         setData(data)
-    //     }
-    //     fetch()
-    // }, [data])
-
-    // const getProduct = () => {
-    //     axios.get("http://localhost:3001/product")
-    //         .then((response) => console.log(response.data))
-    //         .catch((error) => console.log(error))
-    // }
-
-    // getProduct()
+const Products = ({data}) => {
 
     return (
         <div className={styles.container}>
