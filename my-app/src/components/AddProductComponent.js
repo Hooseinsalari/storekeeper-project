@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import axios from "axios";
 
@@ -8,8 +8,9 @@ const AddProductComponent = ({data, setData}) => {
   const [product, setProduct] = useState({
     name: "",
     category: "",
-    quantity: 0,
-    id: Math.floor(Math.random() *1000)    
+    quantity: "",
+    id: Math.floor(Math.random() *1000),
+    click: false    
   })
 
   const changeHandler = (event) => {
@@ -24,7 +25,7 @@ const AddProductComponent = ({data, setData}) => {
   }
 
   return (
-    <form onSubmit={submitHandler} className={styles.container}>
+    <form onSubmit={submitHandler} className={styles.container} autoComplete='off'>
       <div className={styles.inputContainer}>
         <label className={styles.label}>نام محصول</label>
         <input className={styles.input} type="text" name="name" value={product.name} onChange={changeHandler} />

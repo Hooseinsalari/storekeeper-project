@@ -1,40 +1,18 @@
 {
   "product": [
     {
-      "name": "test",
+      "name": "asd",
       "category": "nuts",
       "quantity": "2",
-      "id": 1
+      "id": 90,
+      "click": false
     },
     {
-      "name": "asd",
-      "category": "junkFood",
-      "quantity": 0,
-      "id": 2
-    },
-    {
-      "name": "asdasd",
-      "category": "",
-      "quantity": 0,
-      "id": 3
-    },
-    {
-      "name": "test2",
-      "category": "dairy",
-      "quantity": "90",
-      "id": 4
-    },
-    {
-      "name": "Hossein",
-      "category": "junkFood",
-      "quantity": "11",
-      "id": 5
-    },
-    {
-      "name": "test1",
-      "category": "junkFood",
-      "quantity": "55",
-      "id": 505
+      "name": "mm",
+      "category": "nuts",
+      "quantity": "8",
+      "id": 20,
+      "click": false
     }
   ]
 }

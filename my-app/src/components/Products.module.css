@@ -6,4 +6,16 @@
     justify-content: space-between;
     padding: 5px 20px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+details:hover summary::-webkit-details-marker:hover {
+    color:red;
+    background:white;
 }
