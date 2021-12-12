@@ -9,6 +9,7 @@ const AddProductComponent = ({data, setData}) => {
     name: "",
     category: "",
     quantity: "",
+    description: "",
     id: Math.floor(Math.random() *1000),
     click: false    
   })
@@ -42,6 +43,10 @@ const AddProductComponent = ({data, setData}) => {
       <div className={styles.inputContainer}>
         <label className={styles.label}>تعداد</label>
         <input className={styles.input} type="number" name="quantity" value={product.quantity} onChange={changeHandler} />
+      </div>
+      <div className={styles.inputContainer}>
+        <label className={styles.label}>توضیحات</label>
+        <textarea className={styles.input} name="description" value={product.description} onChange={changeHandler} />
       </div>
       <div>
         <button className={styles.button} type="submit">اضافه کردن محصول</button>

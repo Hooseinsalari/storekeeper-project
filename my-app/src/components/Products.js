@@ -1,8 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import styles from "./Products.module.css";
 
-const Products = ({ data }) => {
+// svg
+import arrowUp from "../svg/sort-up-solid.svg";
+import arrowDown from "../svg/sort-down-solid.svg";
+import axios from "axios";
+
+const Products = ({ data, setData }) => {
+
 
     const details = useRef()
 
@@ -20,6 +26,11 @@ const Products = ({ data }) => {
     //   }
   };
 
+  const deleteHandler = async (id) => {
+    await axios.delete(`http://localhost:3001/product/${id}`)
+    const {data} = await axios.get("http://localhost:3001/product")
+    setData(data)
+  }
  
 
   return (
@@ -30,10 +41,13 @@ const Products = ({ data }) => {
             <p className={styles.proName}>{product.name}</p>
             <p className={styles.proCategory}>{product.category}</p>
             <p className={styles.proQuantity}>{product.quantity}</p>
+            <button onClick={() => deleteHandler(product.id)}>حدف</button>
           </summary>
-          <p>
-              this is a
-          </p>
+          {
+            product.description ? 
+            <p className={styles.description}>{product.description}</p> :
+            <p>توضیحات وجود ندارد</p>
+          }
         </details>
       ))}
     </div>

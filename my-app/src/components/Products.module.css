@@ -1,5 +1,5 @@
 .product {
-    background-color: #ccc9c9;
+    background-color: #f0eaea;
     display: flex;
     width: 30rem;
     margin: 20px;
@@ -7,15 +7,26 @@
     padding: 5px 20px;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.product:hover {
+    background-color: #ccc9c9;
 }
 
 .summary {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
 }
 
-details:hover summary::-webkit-details-marker:hover {
-    color:red;
-    background:white;
+.description {
+    border-top: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: right;
+}
+
+.arrow {
+    width: 10px;
 }
