@@ -21,7 +21,7 @@
 }
 
 .description {
-    border-top: 2px solid black;
+    border: 2px solid rgb(101, 149, 101);
     border-radius: 10px;
     padding: 10px 15px;
     text-align: right;

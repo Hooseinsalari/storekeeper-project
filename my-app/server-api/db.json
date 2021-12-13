@@ -1,27 +1,11 @@
 {
   "product": [
     {
-      "name": "شیر",
-      "category": "dairy",
-      "quantity": "50",
-      "description": "این شیره",
-      "id": 642,
-      "click": false
-    },
-    {
       "name": "تست",
-      "category": "junkFood",
-      "quantity": "505",
-      "description": "تستی است",
-      "id": 185,
-      "click": false
-    },
-    {
-      "name": "شیز",
-      "category": "dairy",
+      "category": "لبنیات",
       "quantity": "50",
-      "description": "این شیره کم چربه",
-      "id": 796,
+      "description": "شش",
+      "id": 710,
       "click": false
     }
   ]
