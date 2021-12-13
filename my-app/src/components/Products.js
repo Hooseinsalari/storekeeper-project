@@ -41,7 +41,7 @@ const Products = ({ data, setData }) => {
             <p className={styles.proName}>{product.name}</p>
             <p className={styles.proCategory}>{product.category}</p>
             <p className={styles.proQuantity}>{product.quantity}</p>
-            <button onClick={() => deleteHandler(product.id)}>حدف</button>
+            <button className={styles.removeBtn} onClick={() => deleteHandler(product.id)}>حدف</button>
           </summary>
           {
             product.description ? 

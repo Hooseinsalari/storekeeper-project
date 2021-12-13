@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 import styles from "./AddProductComponent.module.css"
+import "../font/Mj_Ojan-Fontjo.com/Mj_Ojan.ttf"
 
 const AddProductComponent = ({data, setData}) => {
 
@@ -75,7 +76,7 @@ const AddProductComponent = ({data, setData}) => {
         </div>
         <div className={styles.inputContainer}>
           <label className={styles.label}>توضیحات</label>
-          <textarea className={styles.input} name="description" value={product.description} onChange={changeHandler} />
+          <textarea className={`${styles.input} ${styles.textarea}`} name="description" value={product.description} onChange={changeHandler} />
         </div>
         <div>
           <button className={styles.button} type="submit">اضافه کردن محصول</button>

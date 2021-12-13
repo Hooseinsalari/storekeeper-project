@@ -1,5 +1,5 @@
 .product {
-    background-color: #f0eaea;
+    background-color: #48CAE4;
     display: flex;
     width: 30rem;
     margin: 20px;
@@ -11,7 +11,7 @@
 }
 
 .product:hover {
-    background-color: #ccc9c9;
+    background-color: #0096C7;
 }
 
 .summary {
@@ -21,12 +21,17 @@
 }
 
 .description {
-    border: 2px solid rgb(101, 149, 101);
+    border: 2px solid #03045E;
     border-radius: 10px;
     padding: 10px 15px;
     text-align: right;
 }
 
-.arrow {
-    width: 10px;
+.removeBtn {
+    font-size: 18px;
+    border: 2px solid #03045E;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #48CAE4;
 }

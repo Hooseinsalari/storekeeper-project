@@ -14,10 +14,10 @@ const Navbar = () => {
                 <img src={account} alt="account" className={styles.img} />
             </div>
             <div>
-                <Link to="/">محصولات</Link>
+                <Link className={styles.link} to="/">محصولات</Link>
             </div>
             <div>
-                <Link to="/addProduct">افزودن محصول</Link>
+                <Link className={styles.link} to="/addProduct">افزودن محصول</Link>
             </div>
         </nav>
     );

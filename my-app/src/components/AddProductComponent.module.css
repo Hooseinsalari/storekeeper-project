@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "Mj_Ojan";
+    src: url(../font/Mj_Ojan-Fontjo.com/Mj_Ojan.ttf);
+  } 
+
 .container {
-   background-color: aquamarine; 
+   background-color: #48CAE4; 
    width: 30rem;
    border-radius: 10px;
    margin-bottom: 50px
@@ -11,27 +16,56 @@
 
 .input {
     width: 15rem;
-    height: 20px;
+    height: 30px;
     margin: 30px 0;
+    border: 2px solid #023E8A;
+    border-radius: 10px;
+    outline: none;
+}
+
+.input:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input[type="text"],[type="number"] {
+    font-family: "Mj_Ojan";
+    font-size: 17px;
 }
 
 .label {
     position: absolute;
     /* bottom: 20px; */
-    top: 8px;
+    top: 6px;
 }
 
 .select {
-    height: 30px;
+    font-family: "Mj_Ojan";
+    font-size: 18px;
+    height: 40px;
     width: 15.5rem;
 }
 
 .button {
+    background-color: #023E8A;
     margin: 30px 0;
     font-size: 16px;
-    border: 1px solid gray;
+    border: 1px solid #00B4D8;
     border-radius: 5px;
     font-weight: bold;
     padding: 6px 13px;
     cursor: pointer;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.button:focus {
+    background-color: #1f545f;
+}
+
+.textarea {
+    height: 100px;
+    font-size: 18px;
+    font-family: "Mj_Ojan";
+}
+
