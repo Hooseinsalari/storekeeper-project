@@ -23,15 +23,15 @@ const AddProductComponent = ({data, setData}) => {
     { value: "تنقلات", label: "تنقلات" },
   ]);
 
-  const [newOption, setNewOption] = useState({value:"شیر", label:""})
+  const [newCategory, setNewCategory] = useState({value: "", label:""})
 
-  const categoryHandler = (event) => {
-    setNewOption({value: event.target.value, label: event.target.value})
-    // setOptions(newOption)
+  const inputHandler = (event) => {
+    setNewCategory({value:event.target.value, label: event.target.value})
   }
 
-  const addNewCategory = () => {
-    setOptions({newOption})
+  const categoryHandler = (event) => {
+    console.log(newCategory)
+    setOptions([...options, newCategory])
   }
 
 
@@ -52,9 +52,9 @@ const AddProductComponent = ({data, setData}) => {
     <div>
       <div className={styles.container}>
         <div className={styles.inputContainer}>
-          <label className={styles.label}>دسته بندی جدید</label>
-          <input className={styles.input} type="text" name="category" value={newOption.value} onChange={categoryHandler} />
-          <button onClick={addNewCategory}>افزودن</button>
+          <label className={styles.label}>افزودن دسته بندی</label>
+          <input className={styles.input} value={newCategory.value} onChange={inputHandler} />
+          <button className={styles.button} onClick={categoryHandler}>افزودن</button>
         </div>
       </div>
       <form onSubmit={submitHandler} className={styles.container} autoComplete='off'>

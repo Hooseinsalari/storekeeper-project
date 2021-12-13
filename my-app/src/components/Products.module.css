@@ -1,37 +1,39 @@
 .product {
-    background-color: #48CAE4;
-    display: flex;
-    width: 30rem;
-    margin: 20px;
-    justify-content: space-between;
-    padding: 5px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  background-color: #48cae4;
+  display: flex;
+  width: 30rem;
+  margin: 20px;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .product:hover {
-    background-color: #0096C7;
+  background-color: #0095c78c;
 }
 
 .summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .description {
-    border: 2px solid #03045E;
-    border-radius: 10px;
-    padding: 10px 15px;
-    text-align: right;
+  border: 2px solid #03045e;
+  border-radius: 10px;
+  padding: 10px 15px;
+  text-align: right;
 }
 
 .removeBtn {
-    font-size: 18px;
-    border: 2px solid #03045E;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #48CAE4;
+  font-size: 18px;
+  border: 2px solid #03045e;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #48cae4;
 }
