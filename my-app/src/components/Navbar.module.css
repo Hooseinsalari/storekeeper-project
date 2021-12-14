@@ -19,3 +19,12 @@
     padding: 0 10px;
     color: black;
 }
+
+@media (max-width: 960px) {
+    .container {
+        width: fit-content;
+        margin: 0;
+        height: 160px;
+        border-radius: 0;
+    }
+}

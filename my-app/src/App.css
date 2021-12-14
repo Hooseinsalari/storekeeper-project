@@ -14,3 +14,9 @@
   position: fixed;
   top: 0px;
 }
+
+@media (max-width: 960px) {
+  .navbar {
+    margin-bottom: 90px;
+  }
+}
