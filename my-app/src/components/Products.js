@@ -51,12 +51,10 @@ const Products = ({ data, setData }) => {
           {product.description ? (
             <div>
               <p className={styles.description}>{product.description}</p>
-              <p>{Date()}</p>
             </div>
           ) : (
             <div>
               <p>توضیحات وجود ندارد</p>
-              <p>{Date()}</p>
             </div>
           )}
         </details>

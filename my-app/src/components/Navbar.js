@@ -19,6 +19,7 @@ const Navbar = () => {
             <div>
                 <Link className={styles.link} to="/addProduct">افزودن محصول</Link>
             </div>
+            
         </nav>
     );
 };

@@ -17,7 +17,6 @@ const AddProductComponent = ({ data, setData }) => {
     quantity: "",
     description: "",
     id: Math.floor(Math.random() * 1000),
-    click: false,
   });
 
   const [options, setOptions] = useState([
@@ -45,21 +44,20 @@ const AddProductComponent = ({ data, setData }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     if(product.name && product.quantity && product.category) {
-      setData([...data, product]);
       axios.post("http://localhost:3001/product", product);
+      setData([...data, product]);
+      // notify("با موفقیت افزوده شد", "success");
     } else {
-      notify("error", "اطلاعات اشتباه")
-      return
+      notify("اطلاعات اشتباه" ,"error")
     }
-    notify("success", "با موفقیت افزوده شد");
     setProduct({ name: "", category: "", quantity: 0 });
   };
   
-  // useEffect(() => {
-  //   if(data.length + 1) {
-  //     notify("success", "با موفقیت افزوده شد");
-  //   }
-  // },[])
+  useEffect(() => {
+    if(data.length + 1) {
+      notify("success", "با موفقیت افزوده شد");
+    }
+  },[data])
 
   return (
     <div>

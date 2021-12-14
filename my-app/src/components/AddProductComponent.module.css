@@ -59,7 +59,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.button:focus {
+.button:hover {
     background-color: #1f545f;
 }
 
