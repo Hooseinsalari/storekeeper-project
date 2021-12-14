@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./Products.module.css";
 
 // svg
-import axios from "axios";
 import { useEffect } from "react/cjs/react.development";
 
 const Products = ({ data, saveData, setData }) => {

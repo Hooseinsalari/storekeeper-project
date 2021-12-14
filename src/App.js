@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from "./components/Products";
-import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);

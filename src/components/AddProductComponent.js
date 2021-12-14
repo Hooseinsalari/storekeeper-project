@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./AddProductComponent.module.css";
 import "../font/Mj_Ojan-Fontjo.com/Mj_Ojan.ttf";
 
-import {toast, ToastContainer} from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-import { notify } from "./toastify";
 
 const AddProductComponent = ({ data, setData }) => {
   const [product, setProduct] = useState({
@@ -57,15 +56,10 @@ const AddProductComponent = ({ data, setData }) => {
     if(product.name && product.quantity && product.category) {
       setData([...data, product]);
     }
-    notify("اطلاعات اشتباه", "error");
     
     setProduct({ name: "", category: "", quantity: 0 });
   };
   
-  useEffect(() => {
-    const saveCategory = JSON.parse(localStorage.getItem("newCategory"))
-    if (saveCategory) setOptions([...options,saveCategory])
-  },[])
 
   return (
     <div>
