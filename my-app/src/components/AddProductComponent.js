@@ -19,12 +19,7 @@ const AddProductComponent = ({ data, setData }) => {
     id: Math.floor(Math.random() * 1000),
   });
 
-  const [options, setOptions] = useState([
-    { value: "", label: "-- انتخاب --" },
-    { value: "لبنیات", label: "لبنیات" },
-    { value: "خشکبار", label: "خشکبار" },
-    { value: "تنقلات", label: "تنقلات" },
-  ]);
+  const [options, setOptions] = useState([]);
 
   const [newCategory, setNewCategory] = useState({ value: "", label: "" });
 
@@ -35,6 +30,8 @@ const AddProductComponent = ({ data, setData }) => {
   const categoryHandler = (event) => {
     console.log(newCategory);
     setOptions([...options, newCategory]);
+    axios.post("http://localhost:3001/category", newCategory)
+    setNewCategory({value: ""})
   };
 
   const changeHandler = (event) => {
@@ -54,10 +51,9 @@ const AddProductComponent = ({ data, setData }) => {
   };
   
   useEffect(() => {
-    if(data.length + 1) {
-      notify("success", "با موفقیت افزوده شد");
-    }
-  },[data])
+    axios.get("http://localhost:3001/category")
+      .then((response) => setOptions(response.data))
+  },[])
 
   return (
     <div>
@@ -65,6 +61,7 @@ const AddProductComponent = ({ data, setData }) => {
         <div className={styles.inputContainer}>
           <label className={styles.label}>افزودن دسته بندی</label>
           <input
+            type="text"
             className={styles.input}
             value={newCategory.value}
             onChange={inputHandler}

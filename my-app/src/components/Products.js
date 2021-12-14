@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 import styles from "./Products.module.css";
 
@@ -6,21 +6,7 @@ import styles from "./Products.module.css";
 import axios from "axios";
 
 const Products = ({ data, setData }) => {
-  const details = useRef();
-
-  const clickHandler = (id, e) => {
-    // const index = data.findIndex((product) => product.id === id)
-    // const selectedProduct = {...data[index]}
-    // selectedProduct.click = !selectedProduct.click
-    // const updateData = [...data]
-    // updateData[index] = selectedProduct
-    // console.log(updateData)
-    // if (!details.some(f => f.contains(e.target))) {
-    //     details.forEach(f => f.removeAttribute('open'));
-    //   } else {
-    //     details.forEach(f => !f.contains(e.target) ? f.removeAttribute('open') : '');
-    //   }
-  };
+  
 
   const deleteHandler = async (id) => {
     await axios.delete(`http://localhost:3001/product/${id}`);
@@ -32,10 +18,8 @@ const Products = ({ data, setData }) => {
     <div className={styles.container}>
       {data.map((product) => (
         <details
-          ref={details}
           key={product.id}
           className={styles.product}
-          onClick={(e) => clickHandler(product.id, e)}
         >
           <summary className={styles.summary}>
             <p className={styles.proName}>{product.name}</p>

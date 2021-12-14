@@ -1,11 +1,45 @@
 {
   "product": [
     {
-      "name": "sad",
+      "name": "تست",
+      "category": "تست",
+      "quantity": "60",
+      "description": "این تست هست",
+      "id": 14
+    },
+    {
+      "name": "asdasd",
       "category": "لبنیات",
-      "quantity": "1",
-      "description": "asd",
-      "id": 863
+      "quantity": "2",
+      "description": "",
+      "id": 347
+    }
+  ],
+  "category": [
+    {
+      "value": "",
+      "label": "-- انتخاب --",
+      "id": 1
+    },
+    {
+      "value": "لبنیات",
+      "label": "لبنیات",
+      "id": 2
+    },
+    {
+      "value": "خشکبار",
+      "label": "خشکبار",
+      "id": 3
+    },
+    {
+      "value": "تنقلات",
+      "label": "تنقلات",
+      "id": 4
+    },
+    {
+      "value": "تست",
+      "label": "تست",
+      "id": 5
     }
   ]
 }
