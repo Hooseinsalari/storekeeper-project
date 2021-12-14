@@ -2,9 +2,6 @@ import React from "react";
 
 import styles from "./Products.module.css";
 
-// svg
-import { useEffect } from "react/cjs/react.development";
-
 const Products = ({ data, saveData, setData }) => {
   
 
@@ -24,10 +21,6 @@ const Products = ({ data, saveData, setData }) => {
     data.splice(index, 1);
     localStorage.setItem('data', JSON.stringify(data));
   };
-
-  useEffect(() => {
-     
-    }, [saveData, data])
 
   return data.length ? (
     <div className={styles.container}>
