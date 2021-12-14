@@ -9,13 +9,22 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
+  const saveData = JSON.parse(localStorage.getItem("data"))
   
 
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3001/product")
+  //     .then((response) => setData(response.data));
+  // }, []);
+
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/product")
-      .then((response) => setData(response.data));
-  }, []);
+    if (saveData) setData(saveData)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data))
+  }, [data])
 
   return (
     <div className="App">
@@ -33,7 +42,7 @@ function App() {
           <Route
             path="/"
             component={(props) => (
-              <Products data={data} setData={setData} {...props} />
+              <Products data={data} setData={setData} saveData={saveData} {...props} />
             )}
           />
         </Switch>

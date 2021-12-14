@@ -4,15 +4,31 @@ import styles from "./Products.module.css";
 
 // svg
 import axios from "axios";
+import { useEffect } from "react/cjs/react.development";
 
-const Products = ({ data, setData }) => {
+const Products = ({ data, saveData, setData }) => {
   
 
-  const deleteHandler = async (id) => {
-    await axios.delete(`http://localhost:3001/product/${id}`);
-    const { data } = await axios.get("http://localhost:3001/product");
-    setData(data);
+  const deleteHandler = (id) => {
+    // await axios.delete(`http://localhost:3001/product/${id}`);
+    // const { data } = await axios.get("http://localhost:3001/product");
+    // setData(data);
+    var data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
+    var index;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].id === id) {
+          index=i;
+          break;
+        }
+    }
+    if(index === undefined) return 
+    data.splice(index, 1);
+    localStorage.setItem('data', JSON.stringify(data));
   };
+
+  useEffect(() => {
+     
+    }, [saveData, data])
 
   return data.length ? (
     <div className={styles.container}>

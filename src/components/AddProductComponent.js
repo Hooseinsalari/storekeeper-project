@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import axios from "axios";
-
 import styles from "./AddProductComponent.module.css";
 import "../font/Mj_Ojan-Fontjo.com/Mj_Ojan.ttf";
 
-import {ToastContainer} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import { notify } from "./toastify";
@@ -19,7 +17,23 @@ const AddProductComponent = ({ data, setData }) => {
     id: Math.floor(Math.random() * 1000),
   });
 
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState([
+  {
+    value: "",
+    label: "-- انتخاب --",
+  },
+  {
+    value: "لبنیات",
+    label: "لبنیات",
+  },
+  {
+    value: "خشکبار",
+    label: "خشکبار",
+  },
+  {
+    value: "تنقلات",
+    label: "تنقلات",
+  }]);
 
   const [newCategory, setNewCategory] = useState({ value: "", label: "" });
 
@@ -30,7 +44,7 @@ const AddProductComponent = ({ data, setData }) => {
   const categoryHandler = (event) => {
     console.log(newCategory);
     setOptions([...options, newCategory]);
-    axios.post("http://localhost:3001/category", newCategory)
+    localStorage.setItem("newCategory", JSON.stringify(newCategory))
     setNewCategory({value: ""})
   };
 
@@ -41,18 +55,16 @@ const AddProductComponent = ({ data, setData }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     if(product.name && product.quantity && product.category) {
-      axios.post("http://localhost:3001/product", product);
       setData([...data, product]);
-      // notify("با موفقیت افزوده شد", "success");
-    } else {
-      notify("اطلاعات اشتباه" ,"error")
     }
+    notify("اطلاعات اشتباه", "error");
+    
     setProduct({ name: "", category: "", quantity: 0 });
   };
   
   useEffect(() => {
-    axios.get("http://localhost:3001/category")
-      .then((response) => setOptions(response.data))
+    const saveCategory = JSON.parse(localStorage.getItem("newCategory"))
+    if (saveCategory) setOptions([...options,saveCategory])
   },[])
 
   return (
