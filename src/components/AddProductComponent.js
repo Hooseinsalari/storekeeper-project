@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 import styles from "./AddProductComponent.module.css";
-import "../font/Mj_Ojan-Fontjo.com/Mj_Ojan.ttf";
+import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
-import { ToastContainer} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import { useEffect } from "react/cjs/react.development";
 
 const AddProductComponent = ({ data, setData }) => {
+  useEffect(() => {
+    const saveCate = JSON.parse(localStorage.getItem("options"))
+    if (saveCate) setOptions(saveCate)
+  }, [])
   const [product, setProduct] = useState({
     name: "",
     category: "",
@@ -41,9 +43,11 @@ const AddProductComponent = ({ data, setData }) => {
   };
 
   const categoryHandler = (event) => {
+    event.preventDefault();
     console.log(newCategory);
-    setOptions([...options, newCategory]);
-    localStorage.setItem("newCategory", JSON.stringify(newCategory))
+    // localStorage.setItem("newCategory", JSON.stringify(newCategory))
+    setOptions([...options, newCategory])
+    localStorage.setItem("options", JSON.stringify(options))
     setNewCategory({value: ""})
   };
 
@@ -56,27 +60,35 @@ const AddProductComponent = ({ data, setData }) => {
     if(product.name && product.quantity && product.category) {
       setData([...data, product]);
     }
-    
+    alert("اطلاعات اشتباه")
     setProduct({ name: "", category: "", quantity: 0 });
   };
+
+  
+
+  // useEffect(() => {
+  //   localStorage.setItem("options", JSON.stringify(options))
+  // }, [options])
   
 
   return (
     <div>
-      <div className={styles.container}>
+      <form className={styles.container} onSubmit={categoryHandler}>
         <div className={styles.inputContainer}>
-          <label className={styles.label}>افزودن دسته بندی</label>
+          <label className={styles.label}>افزودن دسته بندی جدید</label>
           <input
             type="text"
             className={styles.input}
             value={newCategory.value}
             onChange={inputHandler}
           />
-          <button className={styles.button} onClick={categoryHandler}>
-            افزودن
-          </button>
+          <div className={styles.cateBtn}>
+            <button type="submit" className={styles.button} >
+              افزودن
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
       <form
         onSubmit={submitHandler}
         className={styles.container}
@@ -100,7 +112,7 @@ const AddProductComponent = ({ data, setData }) => {
             className={`${styles.input} ${styles.select}`}
           >
             {options.map((option) => (
-              <option value={option.value} key={option.value}>
+              <option className={styles.option} value={option.value} key={option.value}>
                 {option.label}
               </option>
             ))}
@@ -131,7 +143,6 @@ const AddProductComponent = ({ data, setData }) => {
           </button>
         </div>
       </form>
-      <ToastContainer />
     </div>
   );
 };

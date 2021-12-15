@@ -6,17 +6,11 @@ import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from "./components/Products";
 
+
 function App() {
   const [data, setData] = useState([]);
   const saveData = JSON.parse(localStorage.getItem("data"))
   
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3001/product")
-  //     .then((response) => setData(response.data));
-  // }, []);
-
   useEffect(() => {
     if (saveData) setData(saveData)
   }, [])

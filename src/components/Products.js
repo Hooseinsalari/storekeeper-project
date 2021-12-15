@@ -2,13 +2,13 @@ import React from "react";
 
 import styles from "./Products.module.css";
 
+// font
+import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
+
 const Products = ({ data, saveData, setData }) => {
   
 
   const deleteHandler = (id) => {
-    // await axios.delete(`http://localhost:3001/product/${id}`);
-    // const { data } = await axios.get("http://localhost:3001/product");
-    // setData(data);
     var data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
     var index;
     for (var i = 0; i < data.length; i++) {
@@ -20,6 +20,8 @@ const Products = ({ data, saveData, setData }) => {
     if(index === undefined) return 
     data.splice(index, 1);
     localStorage.setItem('data', JSON.stringify(data));
+    const saveData = JSON.parse(localStorage.getItem("data"))
+    if (saveData) setData(saveData)
   };
 
   return data.length ? (

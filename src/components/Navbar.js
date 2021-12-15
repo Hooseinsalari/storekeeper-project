@@ -13,10 +13,10 @@ const Navbar = () => {
             <div>
                 <img src={account} alt="account" className={styles.img} />
             </div>
-            <div>
+            <div className={styles.compoLink}>
                 <Link className={styles.link} to="/">محصولات</Link>
             </div>
-            <div>
+            <div className={styles.compoLink}>
                 <Link className={styles.link} to="/addProduct">افزودن محصول</Link>
             </div>
             
