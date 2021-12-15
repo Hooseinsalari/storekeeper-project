@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./AddProductComponent.module.css";
 import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
-import { useEffect } from "react/cjs/react.development";
-
 const AddProductComponent = ({ data, setData }) => {
-  useEffect(() => {
-    const saveCate = JSON.parse(localStorage.getItem("options"))
-    if (saveCate) setOptions(saveCate)
-  }, [])
+
   const [product, setProduct] = useState({
     name: "",
     category: "",
@@ -45,7 +40,6 @@ const AddProductComponent = ({ data, setData }) => {
   const categoryHandler = (event) => {
     event.preventDefault();
     console.log(newCategory);
-    // localStorage.setItem("newCategory", JSON.stringify(newCategory))
     setOptions([...options, newCategory])
     localStorage.setItem("options", JSON.stringify(options))
     setNewCategory({value: ""})
@@ -60,16 +54,13 @@ const AddProductComponent = ({ data, setData }) => {
     if(product.name && product.quantity && product.category) {
       setData([...data, product]);
     }
-    alert("اطلاعات اشتباه")
     setProduct({ name: "", category: "", quantity: 0 });
   };
-
   
-
-  // useEffect(() => {
-  //   localStorage.setItem("options", JSON.stringify(options))
-  // }, [options])
-  
+  useEffect(() => {
+    const saveCate = JSON.parse(localStorage.getItem("options"))
+    if (saveCate) setOptions(saveCate)
+  }, [])
 
   return (
     <div>
