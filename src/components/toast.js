@@ -10,7 +10,7 @@ export const notify = (type, text) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "dark",
     });
   } else {
     toast.error(text, {
@@ -21,7 +21,7 @@ export const notify = (type, text) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "dark",
     });
   }
 };
