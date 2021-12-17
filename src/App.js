@@ -1,6 +1,7 @@
 import "./App.css";
 import AddProductComponent from "./components/AddProductComponent";
 import Navbar from "./components/Navbar";
+// import Statistics from "./components/Statistics";
 
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -26,6 +27,9 @@ function App() {
       </div>
       <div className="form">
         <Switch>
+          {/* <Route path="/statistics" component={(props) => (
+            <Statistics data={data} {...props} />
+          )} /> */}
           <Route
             path="/addProduct"
             component={(props) => (

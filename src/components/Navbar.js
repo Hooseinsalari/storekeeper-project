@@ -19,7 +19,9 @@ const Navbar = () => {
             <div className={styles.compoLink}>
                 <Link className={styles.link} to="/addProduct">افزودن محصول</Link>
             </div>
-            
+            <div className={styles.compoLink}>
+                <Link className={styles.link} to="/statistics">آمار</Link>
+            </div>
         </nav>
     );
 };

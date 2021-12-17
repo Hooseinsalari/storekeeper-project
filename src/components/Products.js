@@ -39,7 +39,7 @@ const Products = ({ data, saveData, setData }) => {
               className={styles.removeBtn}
               onClick={() => deleteHandler(product.id)}
             >
-              حدف
+              حذف
             </button>
           </summary>
           {product.description ? (

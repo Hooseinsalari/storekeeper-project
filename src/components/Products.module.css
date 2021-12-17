@@ -12,7 +12,7 @@
 }
 
 .product {
-  background-color: #90E0EF;
+  background-color: #3A668B;
   display: flex;
   width: 30rem;
   margin: 20px;
@@ -21,8 +21,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
 }
 
 .product:hover {
@@ -37,14 +36,17 @@
 
 .proQuantity {
   width: 30px;
+  color: #e0e0e0;
 }
 
 .proCategory {
   width: 30px;
+  color: #e0e0e0;
 }
 
 .proName {
   width: 100px;
+  color: #e0e0e0;
 }
 
 .description {
@@ -52,21 +54,27 @@
   border-radius: 10px;
   padding: 10px 15px;
   text-align: right;
+  
 }
 
 .removeBtn {
   font-size: 15px;
-  border: 2px solid #a30303;
+  border: none;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #191c2f;
   font-family: "Vazir-Bold";
+  color: #e0e0e0;
+}
+
+p , h1 {
+  color: #e0e0e0;
 }
 
 @media (max-width: 574px) and (min-width: 320px) {
     .product {
-        width: 18rem;
+        width: 350px;
         margin-right: 25px;
         
     }
@@ -75,4 +83,30 @@
         justify-content: center;
         margin: 0 auto;
     }
+}
+
+@media (max-width: 410px) and (min-width: 320px) {
+  .product {
+      width: 350px;
+      margin-right: 25px;
+      
+  }
+  .container {
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 319px) {
+  .product {
+    width: 500px;
+    margin-right: 25px;
+    
+}
+.container {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 }

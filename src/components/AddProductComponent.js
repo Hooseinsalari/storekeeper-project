@@ -39,9 +39,8 @@ const AddProductComponent = ({ data, setData }) => {
 
   const categoryHandler = (event) => {
     event.preventDefault();
-    console.log(newCategory);
     setOptions([...options, newCategory])
-    localStorage.setItem("options", JSON.stringify(options))
+    // sessionStorage.setItem("options", JSON.stringify(options))
     setNewCategory({value: ""})
   };
 
@@ -60,13 +59,21 @@ const AddProductComponent = ({ data, setData }) => {
   useEffect(() => {
     const saveCate = JSON.parse(localStorage.getItem("options"))
     if (saveCate) setOptions(saveCate)
+    console.log(saveCate)
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem("options", JSON.stringify(options))
+  }, [options])
 
   return (
     <div>
       <form className={styles.container} onSubmit={categoryHandler}>
         <div className={styles.inputContainer}>
-          <label className={styles.label}>افزودن دسته بندی جدید</label>
+          <div className={styles.tooltip}>!
+            <span className={styles.tooltiptext}>این بخش اپشنال هست</span>
+          </div>
+          <label className={styles.cateLabel}>افزودن دسته بندی جدید</label>
           <input
             type="text"
             className={styles.input}

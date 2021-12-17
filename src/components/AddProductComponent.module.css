@@ -4,10 +4,10 @@
   } 
 
 .container {
-   background-color: #90E0EF; 
+   background-color: #3A668B; 
    width: 30rem;
    border-radius: 10px;
-   margin-bottom: 50px
+   margin-bottom: 50px;
 }
 
 .cateBtn {
@@ -18,14 +18,39 @@
     position: relative;
 }
 
+.tooltip {
+    position: relative;
+    left:-8px;
+    width: 50px;
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(61, 139, 146);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    top: -38px;
+    right: 69%;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .input {
     width: 15rem;
     height: 33px;
     margin: 30px 0;
     border: 2px solid #023E8A;
     border-radius: 10px;
-    outline: none;
-    
+    outline: none;  
 }
 
 .input:hover {
@@ -43,6 +68,14 @@
     position: absolute;
     /* bottom: 20px; */
     top: 6px;
+    color: #e0e0e0;
+}
+
+.cateLabel {
+    position: absolute;
+    /* bottom: 20px; */
+    top: 26px;
+    color: #e0e0e0;
 }
 
 .select {
@@ -80,5 +113,11 @@
     .container {
         width: 22rem;
         margin-right: 20px;
+    }
+}
+
+@media (max-width: 319) {
+    .container {
+        width: 18rem;
     }
 }
