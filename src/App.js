@@ -1,13 +1,15 @@
 import "./App.css";
-import AddProductComponent from "./components/AddProductComponent";
-import Navbar from "./components/Navbar";
-
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+// components
+import AddProductComponent from "./components/AddProductComponent";
+import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -27,23 +29,24 @@ function App() {
     {
       value: "تنقلات",
       label: "تنقلات",
-    }]);
-  const saveData = JSON.parse(localStorage.getItem("data"))
+    },
+  ]);
+  const saveData = JSON.parse(localStorage.getItem("data"));
 
   useEffect(() => {
-      if (saveData) setData(saveData)
-      const saveCate = JSON.parse(localStorage.getItem("options"))
-      if(saveCate) setOptions(saveCate)
-    }, [])
-    
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data))
-  }, [data])
+    if (saveData) setData(saveData);
+    const saveCate = JSON.parse(localStorage.getItem("options"));
+    if (saveCate) setOptions(saveCate);
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem("options", JSON.stringify(options))
-  }, [options])
-  
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
+  useEffect(() => {
+    localStorage.setItem("options", JSON.stringify(options));
+  }, [options]);
+
   return (
     <div className="App">
       <div className="navbar">
@@ -54,18 +57,29 @@ function App() {
           <Route
             path="/addProduct"
             component={(props) => (
-              <AddProductComponent data={data} setData={setData} options={options} setOptions={setOptions} {...props} />
+              <AddProductComponent
+                data={data}
+                setData={setData}
+                options={options}
+                setOptions={setOptions}
+                {...props}
+              />
             )}
           />
           <Route
             path="/"
             component={(props) => (
-              <Products data={data} setData={setData} saveData={saveData} {...props} />
+              <Products
+                data={data}
+                setData={setData}
+                saveData={saveData}
+                {...props}
+              />
             )}
           />
         </Switch>
       </div>
-      <ToastContainer style={{"margin": "0"}}  />
+      <ToastContainer />
     </div>
   );
 }

@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Vazir-Bold";
   src: url(../font/vazir-font-v16.1.0/Vazir-Bold.ttf);
-} 
+}
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  outline: none;
 }
 
 .product {
-  background-color: #3A668B;
+  background-color: #3a668b;
   display: flex;
   width: 30rem;
   margin: 20px;
@@ -21,7 +21,6 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
 }
 
 .product:hover {
@@ -54,7 +53,6 @@
   border-radius: 10px;
   padding: 10px 15px;
   text-align: right;
-  
 }
 
 .removeBtn {
@@ -68,40 +66,41 @@
   color: #e0e0e0;
 }
 
-p , h1 {
+p,
+h1 {
   color: #e0e0e0;
 }
 
 @media screen and (max-width: 574px) {
   .product {
-      width: 22rem;
-      margin-right: 50px;
+    width: 22rem;
+    margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 444px) {
   .product {
-      width: 19rem;
-      margin-right: 50px;
+    width: 19rem;
+    margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 398px) {
   .product {
-      width: 17rem;
-      margin-right: 30px;
+    width: 17rem;
+    margin-right: 30px;
   }
 }
 
 @media screen and (max-width: 329px) {
   .product {
-      width: 16rem;
-      margin-right: 20px;
+    width: 16rem;
+    margin-right: 20px;
   }
   .proQuantity {
     width: 60px;
   }
-  
+
   .proCategory {
     width: 50px;
   }
@@ -109,12 +108,12 @@ p , h1 {
 
 @media screen and (max-width: 300px) {
   .product {
-      width: 14rem;
+    width: 14rem;
   }
   .proQuantity {
     width: 60px;
   }
-  
+
   .proCategory {
     width: 50px;
   }

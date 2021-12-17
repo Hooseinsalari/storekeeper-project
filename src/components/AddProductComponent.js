@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
+// style
 import styles from "./AddProductComponent.module.css";
 import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { notify } from "./toast";
 
 const AddProductComponent = ({ data, setData, options, setOptions }) => {
-
   const [product, setProduct] = useState({
     name: "",
     category: "",
@@ -16,8 +17,6 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
     description: "",
     id: Math.floor(Math.random() * 1000),
   });
-
-
 
   const [newCategory, setNewCategory] = useState({ value: "", label: "" });
 
@@ -27,10 +26,10 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
 
   const categoryHandler = (event) => {
     event.preventDefault();
-    if(newCategory.value && newCategory.label) {
-    setOptions([...options, newCategory])
+    if (newCategory.value && newCategory.label) {
+      setOptions([...options, newCategory]);
     }
-    setNewCategory({value: ""})
+    setNewCategory({ value: "" });
   };
 
   const changeHandler = (event) => {
@@ -39,13 +38,13 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if(product.name && product.quantity && product.category) {
+    if (product.name && product.quantity && product.category) {
       setData([...data, product]);
-      notify("success", "درسته")
+      notify("success", "با موفقیت افزوده شد");
     } else {
-      notify("error", "غلطه")
+      notify("error", "اطلاعات اشتباه");
     }
-    
+
     setProduct({ name: "", category: "", quantity: 0 });
   };
 
@@ -53,8 +52,8 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
     <div>
       <form className={styles.container} onSubmit={categoryHandler}>
         <div className={styles.inputContainer}>
-          <div className={styles.tooltip}>!
-            <span className={styles.tooltiptext}>این بخش اپشنال هست</span>
+          <div className={styles.tooltip}>
+            !<span className={styles.tooltiptext}>این بخش اپشنال هست</span>
           </div>
           <label className={styles.cateLabel}>افزودن دسته بندی جدید</label>
           <input
@@ -64,7 +63,7 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
             onChange={inputHandler}
           />
           <div className={styles.cateBtn}>
-            <button type="submit" className={styles.button} >
+            <button type="submit" className={styles.button}>
               افزودن
             </button>
           </div>
@@ -93,7 +92,11 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
             className={`${styles.input} ${styles.select}`}
           >
             {options.map((option) => (
-              <option className={styles.option} value={option.value} key={option.value}>
+              <option
+                className={styles.option}
+                value={option.value}
+                key={option.value}
+              >
                 {option.label}
               </option>
             ))}

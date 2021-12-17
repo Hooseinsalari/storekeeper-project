@@ -1,36 +1,34 @@
 import React from "react";
 
+// style
 import styles from "./Products.module.css";
 
 // font
 import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
 const Products = ({ data, saveData, setData }) => {
-  
-
   const deleteHandler = (id) => {
-    var data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
+    var data = localStorage.getItem("data")
+      ? JSON.parse(localStorage.getItem("data"))
+      : [];
     var index;
     for (var i = 0; i < data.length; i++) {
-        if (data[i].id === id) {
-          index=i;
-          break;
-        }
+      if (data[i].id === id) {
+        index = i;
+        break;
+      }
     }
-    if(index === undefined) return 
+    if (index === undefined) return;
     data.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(data));
-    const saveData = JSON.parse(localStorage.getItem("data"))
-    if (saveData) setData(saveData)
+    localStorage.setItem("data", JSON.stringify(data));
+    const saveData = JSON.parse(localStorage.getItem("data"));
+    if (saveData) setData(saveData);
   };
 
   return data.length ? (
     <div className={styles.container}>
       {data.map((product) => (
-        <details
-          key={product.id}
-          className={styles.product}
-        >
+        <details key={product.id} className={styles.product}>
           <summary className={styles.summary}>
             <p className={styles.proName}>{product.name}</p>
             <p className={styles.proCategory}>{product.category}</p>
