@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./AddProductComponent.module.css";
 import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
-const AddProductComponent = ({ data, setData }) => {
+const AddProductComponent = ({ data, setData, options, setOptions }) => {
 
   const [product, setProduct] = useState({
     name: "",
@@ -13,23 +13,7 @@ const AddProductComponent = ({ data, setData }) => {
     id: Math.floor(Math.random() * 1000),
   });
 
-  const [options, setOptions] = useState([
-  {
-    value: "",
-    label: "-- انتخاب --",
-  },
-  {
-    value: "لبنیات",
-    label: "لبنیات",
-  },
-  {
-    value: "خشکبار",
-    label: "خشکبار",
-  },
-  {
-    value: "تنقلات",
-    label: "تنقلات",
-  }]);
+
 
   const [newCategory, setNewCategory] = useState({ value: "", label: "" });
 
@@ -40,9 +24,20 @@ const AddProductComponent = ({ data, setData }) => {
   const categoryHandler = (event) => {
     event.preventDefault();
     setOptions([...options, newCategory])
-    // sessionStorage.setItem("options", JSON.stringify(options))
+    // localStorage.setItem("options", JSON.stringify(options))
+    // setOptions(JSON.parse(localStorage.getItem("options")))
     setNewCategory({value: ""})
   };
+
+  // useEffect(() => {
+  //   // const saveCate = JSON.parse(localStorage.getItem("options"))
+  //   setOptions(JSON.parse(localStorage.getItem("options")))
+  //   // console.log(saveCate)
+  // }, [])
+  
+  // useEffect(() => {
+  //   localStorage.setItem("options", JSON.stringify(options))
+  // }, [options])
 
   const changeHandler = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
@@ -55,16 +50,8 @@ const AddProductComponent = ({ data, setData }) => {
     }
     setProduct({ name: "", category: "", quantity: 0 });
   };
-  
-  useEffect(() => {
-    const saveCate = JSON.parse(localStorage.getItem("options"))
-    if (saveCate) setOptions(saveCate)
-    console.log(saveCate)
-  }, [])
 
-  useEffect(() => {
-    localStorage.setItem("options", JSON.stringify(options))
-  }, [options])
+
 
   return (
     <div>
