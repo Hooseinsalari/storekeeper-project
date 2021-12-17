@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import styles from "./AddProductComponent.module.css";
 import "../font/vazir-font-v16.1.0/Vazir-Bold.ttf";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from "./toast";
+
 const AddProductComponent = ({ data, setData, options, setOptions }) => {
 
   const [product, setProduct] = useState({
@@ -23,21 +27,11 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
 
   const categoryHandler = (event) => {
     event.preventDefault();
+    if(newCategory.value && newCategory.label) {
     setOptions([...options, newCategory])
-    // localStorage.setItem("options", JSON.stringify(options))
-    // setOptions(JSON.parse(localStorage.getItem("options")))
+    }
     setNewCategory({value: ""})
   };
-
-  // useEffect(() => {
-  //   // const saveCate = JSON.parse(localStorage.getItem("options"))
-  //   setOptions(JSON.parse(localStorage.getItem("options")))
-  //   // console.log(saveCate)
-  // }, [])
-  
-  // useEffect(() => {
-  //   localStorage.setItem("options", JSON.stringify(options))
-  // }, [options])
 
   const changeHandler = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
@@ -47,11 +41,13 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
     event.preventDefault();
     if(product.name && product.quantity && product.category) {
       setData([...data, product]);
+      notify("success", "درسته")
+    } else {
+      notify("error", "غلطه")
     }
+    
     setProduct({ name: "", category: "", quantity: 0 });
   };
-
-
 
   return (
     <div>
@@ -128,6 +124,7 @@ const AddProductComponent = ({ data, setData, options, setOptions }) => {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -109,15 +109,30 @@
     padding-right: 10px;
 }
 
-@media (max-width: 574px) and (min-width: 320px) {
+@media screen and (max-width: 574px) {
+    .container {
+        width: 22rem;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .container {
+        width: 18rem;
+        margin-right: 30px;
+    }
+   
+}
+
+/* @media (max-width: 574px) and (min-width: 320px) {
     .container {
         width: 22rem;
         margin-right: 20px;
     }
-}
+} */
 
-@media (max-width: 319) {
+/* @media (max-width: 319) {
     .container {
         width: 18rem;
     }
-}
+} */

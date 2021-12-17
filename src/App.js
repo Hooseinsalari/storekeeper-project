@@ -1,12 +1,13 @@
 import "./App.css";
 import AddProductComponent from "./components/AddProductComponent";
 import Navbar from "./components/Navbar";
-import Statistics from "./components/Statistics";
 
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from "./components/Products";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [data, setData] = useState([]);
@@ -32,9 +33,9 @@ function App() {
   useEffect(() => {
       if (saveData) setData(saveData)
       const saveCate = JSON.parse(localStorage.getItem("options"))
-      setOptions(saveCate)
-  }, [])
-  
+      if(saveCate) setOptions(saveCate)
+    }, [])
+    
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
   }, [data])
@@ -50,9 +51,6 @@ function App() {
       </div>
       <div className="form">
         <Switch>
-          <Route path="/statistics" component={(props) => (
-            <Statistics data={data} {...props} />
-          )} />
           <Route
             path="/addProduct"
             component={(props) => (
@@ -67,6 +65,7 @@ function App() {
           />
         </Switch>
       </div>
+      <ToastContainer style={{"margin": "0"}}  />
     </div>
   );
 }
