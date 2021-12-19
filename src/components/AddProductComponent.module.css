@@ -123,3 +123,10 @@
     margin-right: 30px;
   }
 }
+
+@media screen and (max-width: 306px) {
+  .container {
+    width: 17rem;
+    margin-right: 30px;
+  }
+}
