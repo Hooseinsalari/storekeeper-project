@@ -74,14 +74,12 @@ h1 {
 @media screen and (max-width: 574px) {
   .product {
     width: 22rem;
-    margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 444px) {
   .product {
     width: 20rem;
-    margin-right: 50px;
 
   }
 }
@@ -89,14 +87,12 @@ h1 {
 @media screen and (max-width: 398px) {
   .product {
     width: 19rem;
-    margin-right: 40px;
   }
 }
 
 @media screen and (max-width: 365px) {
   .product {
     width: 19rem;
-    margin-right: 20px;
   }
   .proQuantity {
     width: 60px;
@@ -110,7 +106,6 @@ h1 {
 @media screen and (max-width: 344px) {
   .product {
     width: 17rem;
-    margin-right: 30px;
   }
   .proQuantity {
     width: 60px;
@@ -124,7 +119,6 @@ h1 {
 @media screen and (max-width: 322px) {
   .product {
     width: 15rem;
-    margin-right: 30px;
   }
   .proQuantity {
     width: 60px;
@@ -138,7 +132,6 @@ h1 {
 @media screen and (max-width: 290px) {
   .product {
     width: 13rem;
-    margin-right: 30px;
   }
   .proQuantity {
     width: 60px;
